@@ -36,5 +36,6 @@
 	},
 	"dependencies": {
 		"@thani-sh/prayer-time-se": "^1.0.3"
-	}
+	},
+	"packageManager": "yarn@4.5.0"
 }
