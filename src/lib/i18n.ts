@@ -1,10 +1,9 @@
 const values: { [lang: string]: { [key: string]: string } } = {
 	en: {
 		fajr: 'Fajr',
-		sunrise: 'Sunrise',
+		sunrise: 'Shuruk',
 		dhuhr: 'Dhuhr',
 		asr: 'Asr',
-		asr_hanafi: 'Asr (حَنَفِية)',
 		maghrib: 'Maghrib',
 		isha: 'Isha'
 	}
@@ -22,9 +21,8 @@ export function t(key: string, lang: keyof typeof values = 'en'): string {
  */
 export const f = {
 	time(hour: number, minute: number): string {
-		const h = String(hour > 12 ? hour - 12 : hour);
+		const h = hour.toString().padStart(2, '0');
 		const m = minute.toString().padStart(2, '0');
-		const a = hour > 12 ? 'pm' : 'am';
-		return `${h}:${m} ${a}`;
+		return `${h}:${m}`;
 	}
 };

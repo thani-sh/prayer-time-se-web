@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { date } from '$lib/store';
+	import { city, date } from '$lib/store';
 	import TimeTable from '$lib/ui/TimeTable.svelte';
 	import Datepicker from '$lib/ui/DatePicker.svelte';
 	import CityPicker from '$lib/ui/CityPicker.svelte';
 	import { forDate } from '@thani-sh/prayer-time-se';
 
 	// Prayer times for the selected date
-	$: prayerTimes = forDate('Uppsala', $date);
+	$: prayerTimes = forDate($city, $date);
 </script>
 
 <div class="content">
-	<h1>Prayer Time</h1>
+	<h1>Bönetider</h1>
 	<TimeTable {prayerTimes} />
 </div>
 <div class="overlay">
